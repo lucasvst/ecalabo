@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<meta charset="utf-8">
+<head>
+	<title>Editora Univali</title>
+	<style type="text/css">
+		body {margin:0; padding:0;}
+		#selector {
+			position: absolute;
+			left: 10px; top: 15px;
+		}
+		#content {
+			background: url("home.jpg") center top no-repeat;
+			width: 100%; min-width: 980px;
+			height:1020px;
+		}
+	</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#selector').change(function(){
+				var page = $('option:selected', this).val();
+				$('#content').css('background-image' , 'url('+page+'.jpg)');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="selector">
+		<select>
+			<option value="home">Home</option>
+			<option value="o-escritorio">O Escritório</option>
+			<option value="advogados">Advogados</option>
+			<option value="artigos">Artigos</option>
+			<option value="noticias">Notícias</option>
+			<option value="contato">Contato</option>
+			<option value="vinhos">Vinhos</option>
+		</select>
+	</div>
+	<div id="content"></div>
+</body>
+</html>
